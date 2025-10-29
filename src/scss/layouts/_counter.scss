@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+.counter {
+	.count-value {
+		font-size: calculate-rem(72);
+		@include center;
+	}
+	.counter-btns {
+		@include flex(center, center, column);
+		gap: 1rem;
+		padding: calculate-rem(20) calculate-rem(40);
+	}
+}
+@media (min-width: 768px) {
+	.counter-btns {
+		flex-direction: row !important;
+		padding: calculate-rem(10) calculate-rem(20);
+	}
+}

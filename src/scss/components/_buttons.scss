@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+.btn {
+	height: calculate-rem(40);
+	min-width: calculate-rem(120);
+	padding: calculate-rem(10) calculate-rem(24);
+	font-size: calculate-rem(14);
+	border-radius: $border-radius;
+	background-color: $primary-bg;
+	color: $primary-text;
+	box-shadow: $box-shadow;
+	text-transform: capitalize;
+}
+.btn-primary {
+	@extend .btn;
+	background-color: $color-primary;
+}
+.btn-danger {
+	@extend .btn;
+	background-color: $color-danger;
+	color: $text-inverse;
+}
+.btn-warning {
+	@extend .btn;
+	background-color: $color-warning;
+	color: $text-inverse;
+}
+.btn-succes {
+	@extend .btn;
+	color: $text-inverse;
+	background-color: $color-success;
+}

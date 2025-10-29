@@ -1,0 +1,5 @@
+@use 'fonts';
+@function calculate-rem($size-in-px) {
+	$base-font-size: 16 !default; // in pixels
+	@return ($size-in-px / $base-font-size) * 1rem;
+}

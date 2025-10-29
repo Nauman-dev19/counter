@@ -1,0 +1,15 @@
+@use '../abstracts' as *;
+.container {
+	width: 100%;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+.container-section {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: calculate-rem(48) 0rem;
+	@media (min-width: 768) {
+		padding: calculate-rem(96) 0rem;
+	}
+}

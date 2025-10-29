@@ -1,0 +1,31 @@
+@use 'breakpoints';
+@mixin center {
+	text-align: center;
+	align-content: center;
+}
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+@mixin flex-column-center {
+	@extend flex-center;
+	@include flex-column;
+}
+@mixin flex($justify: center, $align: center, $direction: row) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+@mixin transition(
+	$properties: all,
+	$duration: 0.3s,
+	$timing-function: ease-in-out
+) {
+	transition: $properties $duration $timing-function;
+}

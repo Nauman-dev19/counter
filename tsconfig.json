@@ -1,0 +1,93 @@
+// {
+// 	// Visit https://aka.ms/tsconfig to read more about this file
+// 	"compilerOptions": {
+// 		// File Layout
+// 		"rootDir": "./src/ts",
+// 		"outDir": "./dist/js",
+
+// 		// Environment Settings
+// 		// See also https://aka.ms/tsconfig/module
+// 		"module": "esnext",
+// 		"target": "es6",
+// 		"allowImportingTsExtensions": true,
+// 		"noEmit": true,
+// 		"types": [],
+// 		// For nodejs:
+// 		// "lib": ["esnext"],
+// 		// "types": ["node"],
+// 		// and npm install -D @types/node
+
+// 		// Other Outputs
+// 		"sourceMap": false,
+// 		"declaration": false,
+// 		"declarationMap": false,
+
+// 		// Stricter Typechecking Options
+// 		"noUncheckedIndexedAccess": true,
+// 		"exactOptionalPropertyTypes": true,
+
+// 		// Style Options
+// 		// "noImplicitReturns": true,
+// 		// "noImplicitOverride": true,
+// 		// "noUnusedLocals": true,
+// 		// "noUnusedParameters": true,
+// 		// "noFallthroughCasesInSwitch": true,
+// 		// "noPropertyAccessFromIndexSignature": true,
+
+// 		// Recommended Options
+// 		"strict": true,
+// 		"jsx": "react-jsx",
+// 		"verbatimModuleSyntax": true,
+// 		"isolatedModules": true,
+// 		"noUncheckedSideEffectImports": true,
+// 		"moduleDetection": "force",
+// 		"skipLibCheck": true
+// 	}
+// }
+{
+	// Visit https://aka.ms/tsconfig to read more about this file
+	"compilerOptions": {
+		// =========================================================
+		// 1. File Layout & Output (The fixes for your issue)
+		// =========================================================
+		"rootDir": "./src/ts", // Look for source files here
+		"outDir": "./dist/js", // Output compiled JavaScript here
+		"noEmit": false, // <-- FIX: MUST be 'false' to compile files and allow tsc -w to work
+		"sourceMap": false,
+		"declaration": false,
+		"declarationMap": false,
+
+		// =========================================================
+		// 2. Environment Settings (Modules & Targets)
+		// =========================================================
+		"module": "esnext", // Use modern ES module syntax
+		"target": "es2020", // Target a modern version of JavaScript (e.g., ES2020 or 'esnext')
+		"lib": ["es2020", "dom", "dom.iterable"], // <-- FIX/RECOMMENDATION: Includes browser types (DOM)
+		"jsx": "react-jsx", // Support the new React JSX transform
+
+		// Recommended Options for Modern Module Systems & Bundlers
+		"verbatimModuleSyntax": true, // Recommended for clear and consistent module usage
+		"isolatedModules": true, // Ensures files can be transpiled independently (good for bundlers)
+		"noUncheckedSideEffectImports": true, // Catches potentially unused imports
+		"moduleDetection": "force", // Treat every file as a module (necessary with isolatedModules/verbatimModuleSyntax)
+		// "allowImportingTsExtensions": true, // Allows using .ts/.tsx extensions in imports (common in build setups)
+		"types": [], // Keep empty unless you're installing @types packages
+
+		// =========================================================
+		// 3. Stricter Typechecking Options (Your existing choices)
+		// =========================================================
+		"strict": true, // Enables a broad range of strictness checks
+		"noUncheckedIndexedAccess": true, // Catches undefined access on index signatures
+		"exactOptionalPropertyTypes": true, // Forces exact checks on optional properties
+
+		// Style Options (Recommended for higher quality code)
+		"noImplicitReturns": true,
+		"noImplicitOverride": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+
+		// Other Recommended Options
+		"skipLibCheck": true // Speeds up compilation by skipping type checks on declaration files
+	}
+}

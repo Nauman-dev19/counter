@@ -1,0 +1,25 @@
+@use '../abstracts' as *;
+
+// Use a variable for global consistency
+$footer-bg-color: #333;
+$footer-text-color: #fff;
+$footer-padding: 40px 20px;
+
+footer {
+  // Global footer styles
+  width: 100%;
+  background-color: $footer-bg-color;
+  color: $footer-text-color;
+  padding: $footer-padding;
+  box-sizing: border-box; // Important for responsive layouts
+
+  // Styles for the content container inside the footer
+  .footer-content {
+    max-width: 1200px; // A common max-width for content
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; // Allows columns to stack on small screens
+    justify-content: space-between;
+    gap: 30px; // Spacing between footer columns
+  }
+}
